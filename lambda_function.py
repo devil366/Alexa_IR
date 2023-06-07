@@ -26,7 +26,7 @@ class LaunchRequestHandler(AbstractRequestHandler):
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-        speech_text = "Welcome Blackperl. You can say Hello or You can ask me- Status Report, Relanuching a new VM. Which one you woule like to try?"
+        speech_text = "Welcome mr_unKnown. How may I help you?"
 
         handler_input.response_builder.speak(speech_text).set_card(
             SimpleCard("Hello World", speech_text)).set_should_end_session(
@@ -41,7 +41,7 @@ class HelloWorldIntentHandler(AbstractRequestHandler):
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-        speech_text = "Howdy, Archan?"
+        speech_text = "Howdy, Kaushal?"
 
         handler_input.response_builder.speak(speech_text).set_card(
             SimpleCard("Hello World", speech_text)).set_should_end_session(
@@ -118,10 +118,6 @@ class CatchAllExceptionHandler(AbstractExceptionHandler):
 
         return handler_input.response_builder.response
 
-##################################
-###       Custom Skill        ####
-###       Gather Servers      ####
-##################################
 
 class GatherServersIntentHandler(AbstractRequestHandler):
     def can_handle(self, handler_input):
